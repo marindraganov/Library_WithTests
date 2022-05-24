@@ -42,7 +42,7 @@ describe("Library", function () {
     });
 
     it("Borrow book from another user fails because of not available coppies", async function () {
-        expect(library.connect(addr1).borrowBook(0)).to.be.revertedWith("Sorry we don't have an available copy of this book at the moment.");
+        await expect(library.connect(addr1).borrowBook(0)).to.be.revertedWith("Sorry we don't have an available copy of this book at the moment.");
     });
 
     it("Return book", async function () {
