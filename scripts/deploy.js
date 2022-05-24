@@ -15,13 +15,7 @@ async function deployLibrary() {
 
     console.log('Library Contract address: ', library.address);
     console.log('Done!');
-	
-	await hre.run("verify:verify", {
-        address: library.address,
-        constructorArguments: [
-         // if any
-        ],
-      });
+	console.log('Account balance:', (await deployer.getBalance()).toString());
 }
   
 module.exports = deployLibrary;
